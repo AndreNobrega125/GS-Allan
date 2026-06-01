@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orion Monitor — Missão Aurora-X</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="tema-escuro">
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header id="cabecalho">
+    <div class="header-conteudo">
+      <div class="header-logo">
+        <span class="icone-foguete">🚀</span>
+        <div>
+          <h1>Orion Monitor</h1>
+          <p class="subtitulo">Centro de Controle — Missão Aurora-X</p>
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#sobre">Missão</a>
+        <a href="#formulario">Ocorrências</a>
+      </nav>
+
+      <div class="header-acoes">
+        <!-- Botão de alternância de tema -->
+        <button id="btn-tema" class="btn btn-tema" title="Alternar tema">
+          🌙 Alternar Tema
+        </button>
+        <div id="relogio" class="relogio">--:--:--</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main id="conteudo-principal">
+
+    <!-- ===== SEÇÃO: BANNER DA MISSÃO ===== -->
+    <section id="banner" class="secao-banner">
+      <div class="banner-texto">
+        <h2>Missão Aurora-X</h2>
+        <p>Monitoramento orbital em tempo real da nave experimental <strong>AX-7 Helios</strong>.</p>
+        <p class="banner-desc">
+          Missão de coleta de dados atmosféricos, energéticos e de comunicação
+          a 420 km de altitude. Duração estimada: 180 dias.
+        </p>
+        <div class="banner-botoes">
+          <!-- Botão para mostrar/ocultar detalhes da missão -->
+          <button id="btn-detalhes" class="btn btn-secundario">
+            📋 Ver Detalhes da Missão
+          </button>
+          <!-- Botão para atualizar dados do dashboard -->
+          <button id="btn-atualizar" class="btn btn-primario">
+            🔄 Atualizar Dados
+          </button>
+        </div>
+      </div>
+
+      <!-- Status geral exibido no banner -->
+      <aside id="status-geral" class="status-geral">
+        <h3>Status Geral</h3>
+        <p id="status-texto" class="status-operacional">● OPERACIONAL</p>
+        <p class="status-info">Dia 47 de missão</p>
+        <p class="status-info">Última sincronização: <span id="ultima-sync">--:--</span></p>
+      </aside>
+    </section>
+
+    <!-- ===== DETALHES DA MISSÃO (oculto inicialmente) ===== -->
+    <section id="detalhes-missao" class="secao-detalhes oculto">
+      <h2>Sobre a Missão Aurora-X</h2>
+      <div class="detalhes-grid">
+
+        <article class="card-detalhe">
+          <h3>🎯 Objetivo</h3>
+          <p>
+            Coletar dados sobre comportamento atmosférico em baixa órbita terrestre,
+            testar sistemas de energia solar de nova geração e validar protocolos
+            de comunicação via satélite de próxima geração.
+          </p>
+        </article>
+
+        <article class="card-detalhe">
+          <h3>🛸 A Nave AX-7 Helios</h3>
+          <p>
+            Nave experimental modular com propulsão iônica e painéis solares
+            de 3ª geração. Capacidade para 4 astronautas e 200 kg de equipamentos
+            científicos. Autonomia de 200 dias.
+          </p>
+        </article>
+
+        <article class="card-detalhe">
+          <h3>👨‍🚀 Tripulação</h3>
+          <p>
+            Comandante: Dra. Sofia Almeida<br>
+            Piloto: Cap. Rafael Torres<br>
+            Cientista: Dr. Kenji Nakamura<br>
+            Engenheira: Eng. Amara Diallo
+          </p>
+        </article>
+
+        <article class="card-detalhe">
+          <h3>📡 Comunicação</h3>
+          <p>
+            Comunicação estabelecida via estação de Cabo Canaveral e Kourou.
+            Janela de contato: 4 × 12 min/dia. Latência atual: 0,003 s.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SEÇÃO: DASHBOARD DE TELEMETRIA ===== -->
+    <section id="dashboard" class="secao-dashboard">
+      <h2 class="secao-titulo">📊 Painel de Telemetria</h2>
+      <p class="secao-desc">Dados simulados da nave AX-7 Helios — atualizados automaticamente.</p>
+
+      <!-- Grid de cards de dados -->
+      <div class="dashboard-grid">
+
+        <article class="card-dado" id="card-temperatura">
+          <div class="card-icone">🌡️</div>
+          <h3 class="card-label">Temperatura Interna</h3>
+          <p class="card-valor" id="val-temperatura">24°C</p>
+          <div class="card-barra">
+            <div class="barra-progresso" id="bar-temperatura" style="width: 48%"></div>
+          </div>
+        </article>
+
+        <article class="card-dado" id="card-energia">
+          <div class="card-icone">⚡</div>
+          <h3 class="card-label">Nível de Energia</h3>
+          <p class="card-valor" id="val-energia">87%</p>
+          <div class="card-barra">
+            <div class="barra-progresso barra-energia" id="bar-energia" style="width: 87%"></div>
+          </div>
+        </article>
+
+        <article class="card-dado" id="card-oxigenio">
+          <div class="card-icone">💨</div>
+          <h3 class="card-label">Oxigênio</h3>
+          <p class="card-valor" id="val-oxigenio">96%</p>
+          <div class="card-barra">
+            <div class="barra-progresso barra-oxigenio" id="bar-oxigenio" style="width: 96%"></div>
+          </div>
+        </article>
+
+        <article class="card-dado" id="card-comunicacao">
+          <div class="card-icone">📡</div>
+          <h3 class="card-label">Comunicação</h3>
+          <p class="card-valor" id="val-comunicacao">Estável</p>
+          <p class="card-sub" id="sub-comunicacao">Sinal: 94%</p>
+        </article>
+
+        <article class="card-dado" id="card-sensores">
+          <div class="card-icone">🔬</div>
+          <h3 class="card-label">Sensores Ativos</h3>
+          <p class="card-valor" id="val-sensores">12 / 12</p>
+          <p class="card-sub">Sistema nominal</p>
+        </article>
+
+        <article class="card-dado" id="card-velocidade">
+          <div class="card-icone">🌍</div>
+          <h3 class="card-label">Velocidade Orbital</h3>
+          <p class="card-valor" id="val-velocidade">27.580 km/h</p>
+          <p class="card-sub">Órbita estável</p>
+        </article>
+
+        <article class="card-dado" id="card-altitude">
+          <div class="card-icone">📏</div>
+          <h3 class="card-label">Altitude</h3>
+          <p class="card-valor" id="val-altitude">420 km</p>
+          <p class="card-sub">LEO — Baixa Órbita</p>
+        </article>
+
+        <article class="card-dado" id="card-distancia">
+          <div class="card-icone">🌌</div>
+          <h3 class="card-label">Distância da Terra</h3>
+          <p class="card-valor" id="val-distancia">420 km</p>
+          <p class="card-sub">Órbita circular</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== ASIDE: TRIPULAÇÃO / SENSORES ===== -->
+    <div class="secao-lateral-wrapper">
+
+      <section id="sobre" class="secao-missao">
+        <h2 class="secao-titulo">🧑‍🚀 Status da Tripulação</h2>
+        <div class="tripulacao-lista">
+
+          <article class="card-tripulante">
+            <span class="tripulante-nome">Dra. Sofia Almeida</span>
+            <span class="tripulante-cargo">Comandante</span>
+            <span class="tag tag-verde">✔ OK</span>
+          </article>
+
+          <article class="card-tripulante">
+            <span class="tripulante-nome">Cap. Rafael Torres</span>
+            <span class="tripulante-cargo">Piloto</span>
+            <span class="tag tag-verde">✔ OK</span>
+          </article>
+
+          <article class="card-tripulante">
+            <span class="tripulante-nome">Dr. Kenji Nakamura</span>
+            <span class="tripulante-cargo">Cientista</span>
+            <span class="tag tag-verde">✔ OK</span>
+          </article>
+
+          <article class="card-tripulante">
+            <span class="tripulante-nome">Eng. Amara Diallo</span>
+            <span class="tripulante-cargo">Engenheira</span>
+            <span class="tag tag-verde">✔ OK</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ASIDE: último evento -->
+      <aside id="log-eventos" class="aside-log">
+        <h3>📋 Último Evento</h3>
+        <p id="ultimo-evento">Sistema iniciado com sucesso.</p>
+      </aside>
+
+    </div>
+
+    <!-- ===== SEÇÃO: FORMULÁRIO DE OCORRÊNCIAS ===== -->
+    <section id="formulario" class="secao-formulario">
+      <h2 class="secao-titulo">📝 Cadastro de Ocorrência da Missão</h2>
+      <p class="secao-desc">Registre eventos, anomalias ou observações relacionadas à missão Aurora-X.</p>
+
+      <form id="form-ocorrencia" class="formulario" novalidate>
+
+        <div class="form-grupo">
+          <label for="nome-operador">Nome do Operador *</label>
+          <input
+            type="text"
+            id="nome-operador"
+            name="nome-operador"
+            placeholder="Ex: João da Silva"
+            required
+          />
+        </div>
+
+        <div class="form-grupo">
+          <label for="setor">Setor Responsável *</label>
+          <select id="setor" name="setor" required>
+            <option value="">-- Selecione o setor --</option>
+            <option value="telemetria">Telemetria</option>
+            <option value="propulsao">Propulsão</option>
+            <option value="comunicacao">Comunicação</option>
+            <option value="cientifico">Científico</option>
+            <option value="medico">Médico</option>
+            <option value="seguranca">Segurança</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="tipo-ocorrencia">Tipo de Ocorrência *</label>
+          <select id="tipo-ocorrencia" name="tipo-ocorrencia" required>
+            <option value="">-- Selecione o tipo --</option>
+            <option value="anomalia">Anomalia técnica</option>
+            <option value="alerta">Alerta de sistema</option>
+            <option value="manutencao">Manutenção preventiva</option>
+            <option value="observacao">Observação científica</option>
+            <option value="emergencia">Emergência</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="prioridade">Nível de Prioridade *</label>
+          <select id="prioridade" name="prioridade" required>
+            <option value="">-- Selecione a prioridade --</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+            <option value="critica">Crítica</option>
+          </select>
+        </div>
+
+        <div class="form-grupo form-grupo-completo">
+          <label for="descricao">Descrição da Ocorrência *</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            rows="5"
+            placeholder="Descreva detalhadamente a ocorrência observada..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-acoes">
+          <button type="submit" class="btn btn-primario">
+            🚀 Registrar Ocorrência
+          </button>
+          <button type="button" id="btn-limpar" class="btn btn-secundario">
+            🗑️ Limpar Formulário
+          </button>
+        </div>
+
+        <!-- Mensagem de confirmação (oculta inicialmente) -->
+        <div id="msg-confirmacao" class="msg-confirmacao oculto">
+          ✅ Ocorrência registrada com sucesso pela equipe de missão.
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer id="rodape">
+    <div class="footer-conteudo">
+      <div class="footer-info">
+        <p><strong>Orion Monitor</strong> — Centro de Controle Missão Aurora-X</p>
+        <p>Sistema de monitoramento orbital desenvolvido para fins educacionais.</p>
+      </div>
+      <div class="footer-dados">
+        <p>🛸 AX-7 Helios | Altitude: 420 km | Dia 47 de missão</p>
+        <p>© 2026 — FIAP · Application Development · GS2026.1</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+Global Solution GS2026.1 — Application Development
+FIAP — 2º Ano Ciência da Computação
+Prof. Dr. Allan Roberto Molto
+
+========================================
+INTEGRANTES DO GRUPO
+========================================
+
+Integrante 1:
+Nome completo:
+RM:
+
+Integrante 2:
+Nome completo:
+RM:
+
+Integrante 3:
+Nome completo:
+RM:
+
+========================================
+Projeto: Orion Monitor — Missão Aurora-X
+========================================
