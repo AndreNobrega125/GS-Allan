@@ -5,9 +5,23 @@ Desenvolvida para a Global Solution GS2026.1 — Application Development — FIA
 
 ---
 
+## Integrantes:
+
+| Nome | RM |
+|------|----|
+| *(André Ayello de Nobrega)* | *(RM561754)* |
+| *(André Gouveia de Lima)* | *(RM564219)* |
+| *(Mirella Mascarenhas)* | *(RM562092)* |
+
+---
+
 ## Descrição
 
 O **Orion Monitor** simula o painel de controle da **Missão Aurora-X**, uma missão orbital experimental da nave **AX-7 Helios** a 420 km de altitude. A plataforma exibe dados de telemetria simulados, permite registrar ocorrências operacionais e oferece interações dinâmicas com o usuário.
+
+---
+
+Link do video: https://www.youtube.com/watch?v=3O3S149JdmA
 
 ---
 
@@ -65,7 +79,6 @@ missao-espacial-monitoramento/
 
 ---
 
-Link do video: https://www.youtube.com/watch?v=3O3S149JdmA
 
 ## Integrantes
 
