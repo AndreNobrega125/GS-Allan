@@ -78,8 +78,3 @@ missao-espacial-monitoramento/
 3. Nenhuma instalação ou servidor é necessário.
 
 ---
-
-
-## Integrantes
-
-Preencha o arquivo `integrantes.txt` com os dados do grupo.
