@@ -65,27 +65,7 @@ missao-espacial-monitoramento/
 
 ---
 
-## Roteiro do Vídeo Pitch (~1 minuto)
-
----
-
-Olá, meu nome é [NOME] e este projeto se chama **Orion Monitor**.
-
-Ele foi desenvolvido como uma plataforma web interativa para monitoramento da missão espacial fictícia **Aurora-X**.
-
-O objetivo da aplicação é simular o acompanhamento operacional de uma nave experimental chamada AX-7 Helios, exibindo dados como temperatura, energia, comunicação, sensores ativos, oxigênio e status da missão.
-
-A estrutura foi feita com **HTML semântico**, utilizando `header`, `main`, `section`, `article`, `aside` e `footer`. A estilização foi desenvolvida em **CSS puro**, com Flexbox, responsividade por Media Queries, cards visuais com box model e um tema inspirado na indústria espacial com cores escuras, azul e roxo.
-
-No **JavaScript**, foram implementadas interações como atualização dinâmica dos dados da missão com valores aleatórios, mudança de tema entre escuro e claro, exibição e ocultação de detalhes da missão, relógio em tempo real, log de eventos e envio do formulário sem recarregar a página.
-
-Também existe um **formulário de cadastro de ocorrências**, com inputs, labels, selects, textarea e botão submit, onde o operador pode registrar eventos relacionados à missão com validação dos campos obrigatórios.
-
-O projeto foi desenvolvido utilizando **apenas HTML, CSS e JavaScript puro**, aplicando os conceitos trabalhados ao longo do semestre na disciplina de Application Development da FIAP.
-
-Muito obrigado!
-
----
+Link do video: https://www.youtube.com/watch?v=3O3S149JdmA
 
 ## Integrantes
 
